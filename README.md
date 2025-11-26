@@ -10,7 +10,7 @@ ILoveMyDog
 ...
 ```
 *hash.txt*: Holds hash values. You may change the content of the file. Again, every hash value must be on a seperate line. Also, the hash must be created using <a href="https://en.wikipedia.org/wiki/SHA-2">SHA256</a>, otherwise it will be ignored.  
-The content maz look something like this
+The content may look something like this
 ```plaintext
 1df70cf2264c5b0029c1d8763858c073ef81a1a2309d0062983ec49036cd7a4a
 6b69637e5d2f86a304eeecdbc34854d8499b887049095156d027f16a3838c97b
