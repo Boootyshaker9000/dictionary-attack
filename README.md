@@ -18,8 +18,11 @@ The content may look something like this
 ...
 ```
 **If the files are renamed or removed, program will not work.**  
+## Requirements
+Code editor, which can run C# code (Jetbrains Rider, Visual Studio, Visual Studio Code, ...)
+.Net SDK 8.0
 ## How to run program
-Open code in a code editor, which can run C# code (Jetbrains Rider, Visual Studio, Visual Studio Code, ...).  
+Open your code editor.  
 Run the *Main* method in file *Program.cs*
 ## Output
 ### Errors
