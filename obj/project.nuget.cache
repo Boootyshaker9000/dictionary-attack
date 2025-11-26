@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "icuudrakEVs=",
+  "dgSpecHash": "SGJtWjkdNiw=",
   "success": true,
-  "projectFilePath": "/home/relich/RiderProjects/PasswordCracker/PasswordCracker.csproj",
+  "projectFilePath": "/home/relich/RiderProjects/dictionary-attack/PasswordCracker.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

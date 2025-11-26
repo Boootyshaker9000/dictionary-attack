@@ -4,9 +4,18 @@ using System.Diagnostics;
 
 namespace PasswordCracker.Services;
 
+/// <summary>
+/// Class searching for matching hash values
+/// </summary>
 public class PasswordCrackerService
 {
-    public CrackResult CrackPasswords(List<string> dictionary, List<string> targetHashes)
+    /// <summary>
+    /// Searches for a match between a password hash and a target hash
+    /// </summary>
+    /// <param name="passwordHashes">A List instance of hashed passwords</param>
+    /// <param name="targetHashes">A hash instance of target hashes</param>
+    /// <returns>result of search</returns>
+    public CrackResult CrackPasswords(List<string> passwordHashes, List<string> targetHashes)
     {
         var result = new CrackResult();
         var found = new ConcurrentBag<(string Password, string Hash)>();
@@ -15,7 +24,7 @@ public class PasswordCrackerService
         var targetSet = new HashSet<string>(targetHashes);
         var stopwatch = Stopwatch.StartNew();
 
-        Parallel.ForEach(dictionary, password =>
+        Parallel.ForEach(passwordHashes, password =>
         {
             string hash = HashUtils.ComputeSha256(password);
 
