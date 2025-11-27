@@ -37,3 +37,6 @@ If everything is ok, the program will print the following information:
 </ul>  
 <h2> Legal disclaimer </h2>  
 The program is not intended for illegal activity. The author is not responsible for any legal issues.
+<h2>Contact</h2>  
+If you have any questions regarding this project or you'd like to contribute, do not hesitate to contact me.  
+e-mail: relich@post.cz
