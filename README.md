@@ -23,7 +23,8 @@ Code editor, which can run C# code (Jetbrains Rider, Visual Studio, Visual Studi
 .Net SDK 8.0
 ## How to run program
 Open your code editor.  
-Run the *Main* method in file *Program.cs*
+Run the *Main* method in file *Program.cs*  
+Alternatively, you can go to */bin/Debug/net8.0/* and run the *PasswordCracker* binary file. This method does not require the requirements above.
 ## Output
 ### Errors
 If the text files are removed or renamed, the program will print *The **tempered file.txt** file was not found.*
@@ -37,3 +38,6 @@ If everything is ok, the program will print the following information:
 </ul>  
 <h2> Legal disclaimer </h2>  
 The program is not intended for illegal activity. The author is not responsible for any legal issues.
+<h2>Contact</h2>  
+If you have any questions regarding this project or you'd like to contribute, do not hesitate to contact me.<br>
+e-mail: relich@post.cz
