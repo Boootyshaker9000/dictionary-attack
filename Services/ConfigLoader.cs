@@ -12,15 +12,9 @@ public static class ConfigLoader
     public static Dictionary<string, string>? ConfigFile(string configPath)
     {
         Dictionary<string, string>? config;
-        try
-        {
-            string json = File.ReadAllText(configPath);
-            config = JsonSerializer.Deserialize<Dictionary<string, string>>(json);
-        }
-        catch (FileNotFoundException)
-        {
-            throw new FileNotFoundException();
-        }
+        
+        string json = File.ReadAllText(configPath);
+        config = JsonSerializer.Deserialize<Dictionary<string, string>>(json);
 
         return config;
     }
