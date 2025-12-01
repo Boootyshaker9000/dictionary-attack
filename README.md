@@ -31,9 +31,10 @@ The leaked hashes are loaded from a text file, which's location was declared as 
 To separate individual passwords, use new line. Do not use white spaces, commas, dots or any other character.  
 The content of the file may look something like this:
 ```plaintext
-1df70cf2264c5b0029c1d8763858c073ef81a1a2309d0062983ec49036cd7a4a
-6b69637e5d2f86a304eeecdbc34854d8499b887049095156d027f16a3838c97b
-996c7fd8002501979b9a61b3bda06890c20511be56ac4d29d135e2c106f341d2
+1234561 -> 45c4771dcd1cbd65babf3dd8cd70fed56d428fe708183ba1d146f0ad153773d7
+dragon69 -> cd26b35b473b475ed553e7b512e9a29f51f25db903c9d365decb9e2785f2782f
+password123 -> ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f
+hello123 -> 27cc6994fc1c01ce6659c6bddca9b69c4c6a9418065e612c69d110b3f7b11f8a
 ...
 ```
 ### Output
