@@ -10,6 +10,21 @@ class Program
         try
         {
             config = ConfigLoader.ConfigFile("config.json");
+
+            List<string> keys = new List<string>();
+            keys.Add("passwords");
+            keys.Add("hashes");
+            keys.Add("matches");
+            
+            foreach (var key in config!.Keys)
+            {
+                if (!keys.Contains(key))
+                {
+                    Console.WriteLine($"The {key} key has been renamed.");
+                    Console.WriteLine("Shutting down.");
+                    return;
+                }
+            }
         }
         catch (FileNotFoundException)
         {
@@ -48,17 +63,16 @@ class Program
         if (passwords == null | targetHashes == null)
         {
             Console.WriteLine("Shutting down.");
+            return;
         }
-        else
-        {
-            var cracker = new PasswordCrackerService();
+        
+        var cracker = new PasswordCrackerService();
 
-            var result = cracker.CrackPasswords(passwords, targetHashes);
+        var result = cracker.CrackPasswords(passwords, targetHashes);
 
-            ResultSaver.SaveMatches(config!["matches"], result.Found);
-            
-            Console.WriteLine("====Statistics====");
-            Console.WriteLine(result.StatsText);
-        }
+        ResultSaver.SaveMatches(config!["matches"], result.Found);
+        
+        Console.WriteLine("====Statistics====");
+        Console.WriteLine(result.StatsText);
     }
 }
