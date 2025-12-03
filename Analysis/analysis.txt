@@ -1,0 +1,11 @@
+﻿Program will run in console for simplicity.
+Program will heavily rely on input text files. For user's comfort, the files' path should be configurable.
+The result could be quite a lot of data, so it should be stored in another file, also configurable by the user.
+
+The program will need a configuration file.
+The code will need a function for loading data from input files and saving result data into an output file.
+The matches should be searched for in parallel for speed and efficiency.
+
+The program should keep track of current state, which involves passwords checked, matches found and elapsed time.
+
+It would be smarter to convert passwords into hashes and convert new hashes with target hashes.
