@@ -68,7 +68,7 @@ class Program
         
         var cracker = new PasswordCrackerService();
 
-        var result = cracker.CrackPasswords(passwords, targetHashes);
+        var result = cracker.CrackPasswords(passwords!, targetHashes!);
 
         ResultSaver.SaveMatches(config!["matches"], result.Found);
         
