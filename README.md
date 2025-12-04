@@ -53,9 +53,16 @@ Additionally, every password, which found it's match, will be written in the fil
     <li>.Net SDK 8.0</li>
 </ul>
 <h2>How to run program</h2>
+<ul>
+    <li>Open your code editor.<br>
+    Run the *Main* method in file <em>Program.cs</em></li>
+    <li>Alternatively, you can go to <em>/bin/Debug/net8.0/</em> and run the <em>PasswordCracker</em> binary file. This method does not need the <a href="#requirements">requirements</a> above.</li>
+    <li>If you are using <a href="https://github.com/Boootyshaker9000/dictionary-attack/tags">release</a>, go to the <em>/win-x64/</em> and run <em>dictionary-attack.exe</em></li>
+</ul>
 Open your code editor.<br>
 Run the *Main* method in file <em>Program.cs</em><br>
-Alternatively, you can go to <em>/bin/Debug/net8.0/</em> and run the <em>PasswordCracker</em> binary file. This method does not need the <a href="#requirements">requirements</a> above.
+Alternatively, you can go to <em>/bin/Debug/net8.0/</em> and run the <em>PasswordCracker</em> binary file. This method does not need the <a href="#requirements">requirements</a> above.<br>
+If you are using 
 <h2> Legal disclaimer </h2>  
 The program is not intended for illegal activity. The author is not responsible for any legal issues.
 <h2>Contact</h2>  
