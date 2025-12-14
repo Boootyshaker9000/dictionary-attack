@@ -5,33 +5,38 @@ using System.IO;
 namespace PasswordCracker;
 
 using Services;
+using FileManagers;
 
 class Program
 {
-    static void Main(string[] args)
+    static void Main()
     {
-        Dictionary<string, string>? config = null;
+        Dictionary<string, string>? config;
         try
         {
             config = ConfigLoader.ConfigFile("config.json");
 
-            List<string> keys = new List<string>();
-            keys.Add("passwords");
-            keys.Add("hashes");
-            keys.Add("matches");
-            
+            List<string> keys =
+            [
+                "passwords",
+                "hashes",
+                "matches"
+
+            ];
+
             foreach (var key in config!.Keys)
             {
                 if (!keys.Contains(key))
                 {
-                    ResultLogger.LogResult($"The {key} key is invalid.");
+                    ResultLogger.LogResult($"Error: The {key} key is invalid.");
                     return;
                 }
             }
         }
         catch (FileNotFoundException)
         {
-            Console.WriteLine($"The config.json file was not found.");
+            Console.WriteLine("Error: The config.json file was not found.");
+            return;
         }
 
         List<string>? passwords = null;
@@ -39,16 +44,18 @@ class Program
 
         try
         {
-            passwords = DictionaryLoader.LoadLines(config!["passwords"]);
+            passwords = DictionaryLoader.LoadLines(config["passwords"]);
         }
         catch (FileNotFoundException)
         {
-            Console.WriteLine($"The \'{passwords}\' file was not found.");
-        }
+            ResultLogger.LogResult($"Error: The \'{passwords}\' file was not found.");
+            return;
+        }/*
         catch (NullReferenceException)
         {
-            Console.WriteLine($"The \'{passwords}\' cannot be read, because config.json is missing.");
-        }
+            Console.WriteLine($"Error: The \'{passwords}\' cannot be read, because config.json is missing.");
+            return;
+        }*/
 
         try
         {
@@ -56,26 +63,20 @@ class Program
         }
         catch (FileNotFoundException)
         {
-            Console.WriteLine($"The \'{targetHashes}\' file was not found.");
-        }
+            ResultLogger.LogResult($"Error: The \'{targetHashes}\' file was not found.");
+            return;
+        }/*
         catch (NullReferenceException)
         {
             Console.WriteLine($"The \'{targetHashes}\' cannot be read, because config.json is missing.");
-        }
-
-        if (passwords == null | targetHashes == null)
-        {
-            Console.WriteLine("Shutting down.");
-            return;
-        }
+        }*/
         
         var cracker = new PasswordCrackerService();
 
         var result = cracker.CrackPasswords(passwords!, targetHashes!);
 
-        ResultSaver.SaveMatches(config!["matches"], result.Found);
+        ResultSaver.SaveMatches(config["matches"], result.Found);
         
-        Console.WriteLine("====Statistics====");
-        Console.WriteLine(result.StatsText);
+        ResultLogger.LogResult(result.StatsText);
     }
 }

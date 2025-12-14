@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace PasswordCracker.Services;
+namespace PasswordCracker.FileManagers;
 
 public static class DictionaryLoader
 {

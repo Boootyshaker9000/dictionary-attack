@@ -1,6 +1,8 @@
+using System.Collections.Generic;
+using System.IO;
 using System.Text.Json;
 
-namespace PasswordCracker.Services;
+namespace PasswordCracker.FileManagers;
 
 public static class ConfigLoader
 {
@@ -8,14 +10,10 @@ public static class ConfigLoader
     /// Checks if config file exists. If so, it will return the config file as an instance of Dictionary. If not, null will be returned.
     /// </summary>
     /// <param name="configPath">Config file path</param>
-    /// <returns>Configuration options as a dictionary.</returns>
+    /// <returns>Configuration options as a dictionary with string keys and string values.</returns>
     public static Dictionary<string, string>? ConfigFile(string configPath)
     {
-        Dictionary<string, string>? config;
-        
         string json = File.ReadAllText(configPath);
-        config = JsonSerializer.Deserialize<Dictionary<string, string>>(json);
-
-        return config;
+        return JsonSerializer.Deserialize<Dictionary<string, string>>(json);
     }
 }

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.IO;
 
-namespace PasswordCracker.Services;
+namespace PasswordCracker.FileManagers;
 
 /// <summary>
 /// Static class for saving output into a text file
