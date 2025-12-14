@@ -1,4 +1,8 @@
-﻿namespace PasswordCracker;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+
+namespace PasswordCracker;
 
 using Services;
 
@@ -20,8 +24,7 @@ class Program
             {
                 if (!keys.Contains(key))
                 {
-                    Console.WriteLine($"The {key} key has been renamed.");
-                    Console.WriteLine("Shutting down.");
+                    ResultLogger.LogResult($"The {key} key is invalid.");
                     return;
                 }
             }
