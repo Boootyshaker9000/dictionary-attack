@@ -38,15 +38,18 @@ hello123 -> 27cc6994fc1c01ce6659c6bddca9b69c4c6a9418065e612c69d110b3f7b11f8a
 ...
 ```
 ### Output
-#### Errors
-If the text files are removed or renamed, the program will print *The **tempered file.txt** file was not found.*
-#### No errors
-If everything is ok, the program will print the following information:  
-<ul>
-  <li>Number of passwords matched.</li>
-  <li>How long did it tak to check all combinations</li>
-</ul> <br>
-Additionally, every password, which found it's match, will be written in the file located as configured in the value for key <em>"matches"</em>.
+Information about every result will be written in text file *log.txt*.  
+Additionally, every password, which found its match, will be written in the file located as configured in the value for key *"matches"*.  
+The content of the file may look something like this:
+```plaintext
+14.12.2025 14:49:33: Error: The 'Data/hashe.txt' file was not found.
+14.12.2025 14:49:44: Error: The 'Data/password.txt' file was not found.
+14.12.2025 14:50:06: Error: The matche key is invalid.
+14.12.2025 14:50:30: Passwords tested: 9999
+Found: 4
+Runtime: 111 ms
+...
+```
 <h2 id="requirements">Requirements</h2>
 <ul>
     <li>Code editor, which can run C# code (Jetbrains Rider, Visual Studio, Visual Studio Code, ...)</li>
@@ -59,7 +62,7 @@ Alternatively, you can go to <em>/bin/Debug/net8.0/</em> and run the <em>Passwor
 <h2> Legal disclaimer </h2>  
 The program is not intended for illegal activity. The author is not responsible for any legal issues.
 <h2>Contact</h2>  
-If you have any questions regarding this project or you'd like to contribute, do not hesitate to contact me.
+If you have any questions regarding this project, or you'd like to contribute, do not hesitate to contact me.
 <ul>
     <li>e-mail address: relich@post.cz</li>
     <li>discord id: 697353234465030184</li>
