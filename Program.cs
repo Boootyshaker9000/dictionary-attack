@@ -48,7 +48,7 @@ class Program
         }
         catch (FileNotFoundException)
         {
-            ResultLogger.LogResult($"Error: The \'{passwords}\' file was not found.");
+            ResultLogger.LogResult($"Error: The \'{config["passwords"]}\' file was not found.");
             return;
         }/*
         catch (NullReferenceException)
@@ -59,11 +59,11 @@ class Program
 
         try
         {
-            targetHashes = DictionaryLoader.LoadLines(config!["hashes"]);
+            targetHashes = DictionaryLoader.LoadLines(config["hashes"]);
         }
         catch (FileNotFoundException)
         {
-            ResultLogger.LogResult($"Error: The \'{targetHashes}\' file was not found.");
+            ResultLogger.LogResult($"Error: The \'{config["hashes"]}\' file was not found.");
             return;
         }/*
         catch (NullReferenceException)
