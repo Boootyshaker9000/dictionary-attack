@@ -13,16 +13,9 @@ public static class DictionaryLoader
     /// <returns>A List instance of individual values loaded from a text file</returns>
     public static List<string>? LoadLines(string path)
     {
-        try
-        {
-            return File.ReadAllLines(path)
-                .Select(line => line.Trim())
-                .Where(line => !string.IsNullOrWhiteSpace(line))
-                .ToList();
-        }
-        catch (FileNotFoundException)
-        {
-            return null;
-        }
+        return File.ReadAllLines(path)
+            .Select(line => line.Trim())
+            .Where(line => !string.IsNullOrWhiteSpace(line))
+            .ToList();
     }
 }
